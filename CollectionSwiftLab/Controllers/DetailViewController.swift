@@ -10,9 +10,24 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var imageDetail: UIImageView!
+    @IBOutlet weak var nameLabelDetail: UILabel!
+    @IBOutlet weak var countryLabelDetail: UILabel!
+    @IBOutlet weak var dateLabelDetail: UILabel!
+    
+    var park: Park?
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let nationalPark = park {
+            navigationItem.title = nationalPark.name
+            imageDetail.image = UIImage(named: nationalPark.photo)
+            nameLabelDetail.text = nationalPark.name
+            countryLabelDetail.text = nationalPark.country
+            dateLabelDetail.text = nationalPark.date
+        }
     }
 
 
