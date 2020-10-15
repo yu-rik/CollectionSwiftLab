@@ -9,7 +9,21 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
+    var park: Park? {
+        didSet {
+            if let nationalPark = park{
+                imageCell.image = UIImage(named: nationalPark.photo)
+                textLabelCell.text = nationalPark.photo
+            }
+        }
+    }
     
     @IBOutlet weak var textLabelCell: UILabel!
     @IBOutlet weak var imageCell: UIImageView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageCell.image = nil
+        textLabelCell.text = ""
+    }
 }

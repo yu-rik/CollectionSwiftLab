@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A218DAB2538C2DB00620461 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A218DAA2538C2DB00620461 /* SectionHeaderView.swift */; };
 		7A3289B6252F75FC0031CD82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3289B5252F75FC0031CD82 /* AppDelegate.swift */; };
 		7A3289B8252F75FC0031CD82 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3289B7252F75FC0031CD82 /* SceneDelegate.swift */; };
 		7A3289BA252F75FC0031CD82 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A3289B9252F75FC0031CD82 /* DetailViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A218DAA2538C2DB00620461 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		7A3289B2252F75FC0031CD82 /* CollectionSwiftLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionSwiftLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A3289B5252F75FC0031CD82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A3289B7252F75FC0031CD82 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				7A3289D1252FAF1A0031CD82 /* CollectionViewCell.swift */,
+				7A218DAA2538C2DB00620461 /* SectionHeaderView.swift */,
 			);
 			path = Layouts;
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				7A3289CC252FA8B10031CD82 /* MasterViewController.swift in Sources */,
 				7A8E62C22532119D0033E393 /* Park.swift in Sources */,
 				7A3289CF252FA98D0031CD82 /* ParkDataSource.swift in Sources */,
+				7A218DAB2538C2DB00620461 /* SectionHeaderView.swift in Sources */,
 				7A3289D2252FAF1A0031CD82 /* CollectionViewCell.swift in Sources */,
 				7A3289BA252F75FC0031CD82 /* DetailViewController.swift in Sources */,
 				7A3289B6252F75FC0031CD82 /* AppDelegate.swift in Sources */,

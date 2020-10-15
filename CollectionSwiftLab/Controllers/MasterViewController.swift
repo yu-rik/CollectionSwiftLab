@@ -16,11 +16,12 @@ class MasterViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let width = collectionView.frame.width/3
+        let width = collectionView.frame.width/2
         let layout = collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
+        layout.sectionHeadersPinToVisibleBounds = true
         
         
 
@@ -45,26 +46,34 @@ class MasterViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return parksDataSource.numberOfSections
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return parksDataSource.count
+       // return parksDataSource.count
+        return parksDataSource.numberOfParksInSection(section)
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
     
-        cell.textLabelCell.text = "\(indexPath.row)"
+       // cell.textLabelCell.text = "\(indexPath.row)"
         if let park = parksDataSource.parkForItemAtIndexPath(indexPath){
-            cell.imageCell.image = UIImage(named: park.photo)
-            
+           // cell.imageCell.image = UIImage(named: park.photo)
+            cell.park = park
+          
         }
     
         return cell
     }
-
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let sectionHeaderView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeader", for: indexPath) as! SectionHeaderView
+        if let title = parksDataSource.titleForSectionAtIndexPath(indexPath){
+            sectionHeaderView.title = title
+        }
+        return sectionHeaderView
+    }
     // MARK: UICollectionViewDelegate
 
     /*

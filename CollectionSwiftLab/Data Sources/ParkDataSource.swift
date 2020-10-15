@@ -64,7 +64,7 @@ class ParkDataSource {
     }
     
     func indexPathForPark(_ park: Park) -> IndexPath {
-        let section = sections.index(of: park.country)!
+        let section = sections.firstIndex(of: park.country)!
         var item = 0
         for (index, currentPark) in parksForSection(section).enumerated() {
             if currentPark === park {
